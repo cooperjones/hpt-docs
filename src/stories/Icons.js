@@ -101,7 +101,7 @@ const icon = (icon, name) => (
     </Grid>
   );
 
-class Icons extends Component {
+export class Icons extends Component {
   render() {
     return (
         <Theme.Provider>
@@ -179,4 +179,3 @@ class Icons extends Component {
   }
 }
 
-export default Icons;

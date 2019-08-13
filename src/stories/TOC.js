@@ -5,7 +5,7 @@ const Title = ({text}) => <Typography variant='h2' align='center' style={{paddin
 
 const Heading = ({text}) => <Grid container wrap='nowrap' alignItems='center' style={{paddingTop: '16px', paddingBottom: '8px'}}><Typography variant='h4'>{text}</Typography><Grid item style={{flex: '1', marginLeft: '8px'}}><Divider /></Grid></Grid>;
 
-class TOC extends Component {
+export class TOC extends Component {
   render() {
     return (
       <Grid container justify='center' alignItems='center' alignContent='center' direction='column' style={{height: '100%'}}>
@@ -22,4 +22,3 @@ class TOC extends Component {
   }
 }
 
-export default TOC;

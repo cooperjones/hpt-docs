@@ -20,7 +20,7 @@ const LinkItem = ({title, link}) =>
     </Grid>
 </Grid>
 
-class TOC extends Component {
+export class Links extends Component {
   render() {
     return (
       <Grid container justify='center' alignItems='center' alignContent='center' direction='column' style={{height: '100%'}}>
@@ -40,5 +40,3 @@ class TOC extends Component {
     );
   }
 }
-
-export default TOC;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Typography, Grid, Link } from '@material-ui/core';
 
-class Welcome extends Component {
+export class Welcome extends Component {
   render() {
     return (
       <Grid container justify='center' alignItems='center' alignContent='center' direction='column' style={{height: '100%'}}>
@@ -19,5 +19,3 @@ class Welcome extends Component {
     );
   }
 }
-
-export default Welcome;

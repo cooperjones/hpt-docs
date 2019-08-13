@@ -1,15 +1,17 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addParameters } from '@storybook/react';
 
-import Welcome from './Welcome';
-import GoogleDoc from './GoogleDoc';
-import TOC from './TOC';
-import Links from './Links';
-import Icons from './Icons';
+import { ComboBox } from '@highpoint/ui-elements';
+
+import {Welcome} from './Welcome';
+import {GoogleDoc} from './GoogleDoc';
+import {TOC} from './TOC';
+import {Links} from './Links';
+import {Icons} from './Icons';
 const googleDocs = [
   {
-    chapterTitle: 'Standardization|Accessibility/Aria-Live', 
+    chapterTitle: 'Standardization|Accessibility', 
     storyTitle: 'Aria-Live', 
     src: "https://docs.google.com/document/d/e/2PACX-1vSYegsTwIhcbhYmw7IWrrmSuYmo-24w-mEb-dL-ZcNfMvSv9LWGG7vvuCGK35FpcA_pOPpErLbvBi9g/pub?embedded=true",
     editSrc: "https://docs.google.com/document/d/1MlImX-xwJMh5hMXQCsdvzibqM327tRn1NMIg3zmoxm0/edit#"
@@ -27,10 +29,16 @@ const googleDocs = [
     editSrc: 'https://docs.google.com/document/d/1VZ9fbRK7Uz76Dp_hlXJEwY53CpnOawwB8H4wB8scMUI/edit#'
   },
   {
-    chapterTitle: 'Standardization|Git', 
-    storyTitle: 'Guidelines', 
+    chapterTitle: 'Standardization|Workflow', 
+    storyTitle: 'Git', 
     src: "https://docs.google.com/document/d/e/2PACX-1vTMqvSC7MZfB8MlzfRtIwNtcYxJef0afGsXDU_EdJxUGjJASsadnYd7MX5oGFi3bW78A7sA2fgwii3Y/pub?embedded=true",
     editSrc: "https://docs.google.com/document/d/1i-x-QHL4sHfo-Xy61wXY-CNL1gfx0p4WQfOvPbjVsRA/edit#"
+  },
+  {
+    chapterTitle: 'Standardization|Workflow', 
+    storyTitle: 'Frontend Testing', 
+    src: "https://docs.google.com/document/d/e/2PACX-1vTT89u-9cWFwzcQtb8WP7vCipYe-kuX7di_AKYrfVxCeYNCj8W8_6726nqZ8Lms70lHchBtan0A-WXL/pub?embedded=true",
+    editSrc: "https://docs.google.com/document/d/1HojwsMKq5W7hDkhhlPyUMlJb6wONHstFBJGnPpMb6A0/edit#"
   },
 ];
 
@@ -38,6 +46,9 @@ storiesOf('Welcome|Welcome', module).add('Welcome', () => <Welcome />);
 /* storiesOf('Welcome', module).add('Table of Contents', () => <TOC />); */
 storiesOf('Welcome|Welcome', module).add('Links', () => <Links />);
 storiesOf('Components|ui-elements/Icons', module).add('Icons', () => <Icons />);
+storiesOf('Components|ui-elements/ComboBox', module).addParameters({component: ComboBox}).add('Standard', () => 
+    <ComboBox label="Combobox" value={''} onChange={newVal => {console.log(newVal);}} options={Array.from({length: 100}, (v, i) => [i.toString(), `Very long description extremely long Option ${i.toString()}`])}/>
+    );
 
 
 googleDocs.forEach((item) =>

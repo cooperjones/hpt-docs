@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, CircularProgress, Modal } from '@material-ui/core';
 
-const GoogleDoc = ({src, editSrc}) => {
+export const GoogleDoc = ({src, editSrc}) => {
     const [isLoaded, setIsLoaded] = useState(false);
     return (
         <>
@@ -29,5 +29,3 @@ GoogleDoc.propTypes = {
     src: PropTypes.string,
     editSrc: PropTypes.string
   };
-
-export default GoogleDoc;
