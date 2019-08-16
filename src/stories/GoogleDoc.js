@@ -15,7 +15,7 @@ export const GoogleDoc = ({src, editSrc}) => {
           </Grid>
           </Modal>}
         <iframe 
-        style={{height: '100%', width: '100%', border: 'none', display: 'flex'}}
+        style={{height: '100%', width: '100%', border: 'none', display: 'flex', position: 'absolute', top: '0', bottom: '0', left: '0', right: '0'}}
         src={src} 
         onLoad={_e => setIsLoaded(true)}/>
         <Button color='primary' variant='contained' size='small' href={editSrc} target="_blank" style={{position: 'absolute', right: '32px', top: '0px', borderTopLeftRadius: '0', borderTopRightRadius: '0'}}>

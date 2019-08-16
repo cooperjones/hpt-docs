@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import workflow from './img/workflow.png';
+import merge from './img/merge.png';
+import jenkins from './img/jenkins.png';
+
+<Meta title='Standardization|Workflow/Git' />
+
+# Git Guidelines
+
+## Commit Naming
+
+```fix 2085: BC term select blank screen error```
+
+1. `fix` : Semantic commit type (Type: chore, docs, feat, fix, refactor, style, or test)
+2. `2085` : (optional) The associated redmine ticket number. Only one ticket should be associated with each commit.
+3. `BC` : (optional) The associated app abbreviation if applicable. (usually just app acronym, e.g. Class Search = CS)
+4. `term select blank screen error`: A brief description of the issue/feature that was implemented/fixed
+
+## Git Development Flow
+<img src={workflow} style={{marginBottom: '16px'}}/>
+
+### Feature Branch
+
+
+* Work for a particular issue needs to be developed in a feature branch. It should be branched from develop.
+* Only changes that are ready to be merged into the master branch should be pushed directly to the develop branch.
+* Feature branches associated with specific redmine tickets should use the ticket number as their branch name. (e.g. 2085)
+* A feature will go through its first round of testing in the feature branch. Once it has been tested and approved, the branch can be merged into the develop branch.
+* Feature branches can be merged into the develop branch for testing using BitBucket’s merge UI. When merging:
+  * The commit message should be formatted as shown above
+  * The merge strategy should be set to squash (this combines all of the branch’s commits into one, making for a cleaner git history)
+  * Check the option to close the source branch
+
+<img src={merge} style={{marginBottom: '16px'}}/>
+
+* If the changes in the feature branch have a high chance of affecting other parts of the project or the feature is particularly important/complex, instead of merging, a pull request should be made for the branch and reviewers should be assigned to look over the changes.
+
+### Develop Branch
+
+* The develop branch is deployed in the Devo environment.
+* No uncomplete code should ever be pushed to the develop branch. Instead, incomplete changes should live in a feature branch until they are tested and ready to be merged.
+* Make sure that your code builds successfully before committing/merging to develop. Pushing changes automatically triggers the remote assets to rebuild. The result of the build can be viewed in the #jenkins slack channel or at [https://m.mhighpoint.com/jenkins](https://m.mhighpoint.com/jenkins).
+
+<img src={jenkins} style={{marginBottom: '16px', borderRadius: '4px'}}/>
+
+### Master Branch
+
+* The master branch is deployed in the Tst environment.
+* **Never commit to this branch.** Instead, changes should be committed/merged to the develop branch and then merged into the master branch. The only exception to this is merge commits. Fast forwarding should be used instead of merge commits whenever possible.
+* Packaging takes place out of this branch, so only changes that are production ready (have passed a round of testing in develop) should be merged to this branch.

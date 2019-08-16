@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import {GoogleDoc} from '../../GoogleDoc';
+import localdev from './img/localdev.png';
+
+
+<Meta title='Standardization|Workflow/Frontend Testing' />
+
+# Frontend Testing
+
+## Local Dev Environments
+
+The first round of testing should take place in the feature branch corresponding to the ticket being tested. The Local Dev Environments utility is provided for remote testing of feature branches.
+
+The Local Dev Environments page can be accessed by going to **NavBar > Highpoint > Utilities > Local Dev Environments**.
+
+<img src={localdev} style={{marginBottom: '16px', borderRadius: '4px'}}/>
+
+#### Use
+
+* To activate a Local Dev Environment, check the desired product and input the ticket number you are testing, then press Add. 
+
+* The Current Environments table indicates currently active environments. Any products with current environments selected will be loaded using the frontend assets from that branch of the frontend repository.
+
+* To stop using a branch, simply check the product in the current environments table and press Remove Selection, or just press Remove All.
+
