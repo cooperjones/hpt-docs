@@ -105,7 +105,7 @@ export class Icons extends Component {
   render() {
     return (
         <Theme.Provider>
-        <Grid container spacing={8} style={{width: '100%'}}>
+        <Grid container spacing={1} style={{width: '100%'}}>
         {icon(<AccountBox />, 'AccountBox')}
         {icon(<Add />, 'Add')}
         {icon(<AddToCompare />, 'AddToCompare')}

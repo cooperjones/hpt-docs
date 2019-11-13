@@ -1,0 +1,54 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import { Grid } from '@material-ui/core';
+import { Theme } from '@highpoint/ui-elements';
+import { Typo } from './typo';
+
+<Meta title='Standardization|Typography' />
+
+# Typography
+
+## Typography component
+
+Highpoint apps use Material-Ui's Typography component to display all text. Material-UI's default Typography style variants have been modified to match the typography styles in the Highpoint style guide.
+
+See the [Material-Ui documentation](https://material-ui.com/api/typography/) for the full breakdown of the Typography component.
+
+<Theme.Provider>
+<Grid container spacing={1} >
+    <Typo 
+        variant='h1'
+        title='Header 1'
+        description='Font size: 32 / Line space: 32 / Character space: -0.8 / Weight: Light'
+    />
+    <Typo 
+        variant='h2'
+        title='Header 2'
+        description='Font size: 22 / Line space: 22 / Character space: -0.2 / Weight: Text'
+    />
+    <Typo 
+        variant='h3'
+        title='Header 3'
+        description='Font size: 18 / Line space: 18 / Character space: 0 / Weight: Text'
+    />
+    <Typo 
+        variant='h4'
+        title='Header 4'
+        description='Font size: 12 / Line space: 12 / Character space: 0.8 / Weight: Semibold / Uppercase'
+    />
+    <Typo 
+        variant='body1'
+        title='Basic'
+        description='Font size: 15 / Line space: 15 / Character space: 0 / Weight: Text'
+    />
+    <Typo 
+        variant='body2'
+        title='Small'
+        description='Font size: 14 / Line space: 14 / Character space: 0 / Weight: Text'
+    />
+    <Typo 
+        variant='caption'
+        title='Tiny'
+        description='Font size: 12 / Line space: 12 / Character space: 0 / Weight: Text'
+    />
+</Grid>
+</Theme.Provider>

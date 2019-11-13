@@ -1,0 +1,42 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import { NoWrap, SevenColumns } from './layouts';
+
+<Meta title='Standardization|Layout' />
+
+# Layout
+
+## Grid component
+
+Highpoint apps use Material-Ui's Grid component for the majority of layouts. The Grid component is an abstraction for creating Flexbox layouts, so having a good understanding of the Flexbox paradigm is vital to using this component. [Intro to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 
+
+See the [Material-Ui documentation](https://material-ui.com/api/grid/) for the full breakdown of the Grid component.
+
+### Tips
+
+- Wherever possible, the Grid component's props should be used to apply flex styles (justify-content, align-items, flex-basis, flex-direction, etc.) to the Grid. ([Grid component API](https://material-ui.com/api/grid/))
+
+- The prop wrap='nowrap' can be applied to the container Grid to prevent the items inside from wrapping. This can be useful in several cases:
+
+#### 7 Evenly spaced columns
+<SevenColumns />
+<Source code={`
+<Grid container wrap='nowrap'>
+    <Grid item xs={12}>Col</Grid>
+    <Grid item xs={12}>Col</Grid>
+    ...
+    <Grid item xs={12}>Col</Grid>
+</Grid>
+`} />
+
+#### Fixed size action column
+<NoWrap />
+<Source code={`
+    <Grid container wrap='nowrap'>
+        <Grid item>
+        This item will shrink to fit it's content
+        </Grid>
+        <Grid item xs={12}>
+        This item will take up the remaining content
+        </Grid>
+    </Grid>
+`} />

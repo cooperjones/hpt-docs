@@ -1,0 +1,57 @@
+import { Typography, Grid, Link, Divider } from '@material-ui/core';
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+import Theme from '@highpoint/ui-elements/dist/es/Theme';
+import { Title, Heading, LinkItem } from './links';
+import modheader from './img/modheader.png';
+
+<Meta title='Welcome|Installation' />
+
+# Frontend Installation Guide
+
+## Getting Started
+
+1. Install [Node stable version](https://nodejs.org/).
+2. Install [Yarn](https://yarnpkg.com).
+3. Clone a local copy of the chosen project's git repository.
+4. Navigate to project directory (where this README is located).
+5. Run `yarn install`.
+6. Copy `.env-sample` to `.env` and fill in the values (see examples below).
+7. Update your hosts file and add one or all of the following lines (depending on the product you are attempting to use): [How to: Edit hosts file.](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)
+
+<Source language='none' code={`
+    127.0.0.1	cxassets.dev.local  # Campus Experience
+    127.0.0.1	dpassets.dev.local  # Degree Planner
+    127.0.0.1	sbassets.dev.local  # Schedule Builder
+    127.0.0.1	mcassets.dev.local  # Message Center
+    `} />
+
+
+8. Start compilers on separate terminal tabs:
+   - Run `yarn watch:reason` to enable ReasonML code compilation on-the-fly. If you don't plan on working on a ReasonML folder-project, `yarn build:reason` will build just once.
+   - Run `yarn serve` to watch and serve JS files with webpack.
+9. Using a browser extension like [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj) (Chrome) or [Header Editor](https://addons.mozilla.org/en-US/firefox/addon/header-editor/) (Firefox)
+   or a proxy like [Fiddler](https://www.telerik.com/download/fiddler) or [Charles](https://www.charlesproxy.com/), add one or all of the following header/value pairs to the
+   requests: 
+
+
+<Source language='none' code={`
+    X-Campus-Experience-Asset-Url   https://cxassets.dev.local:9970/  # Campus Experience
+    X-Student-Planner-Asset-Url     https://dpassets.dev.local:9968/  # Degree Planner
+    X-Schedule-Builder-Asset-Url    https://sbassets.dev.local:9966/  # Schedule Builder
+    X-Message-Center-Asset-Url      https://mcassets.dev.local:9967/  # Message Center
+    `} />
+
+#### ModHeader example
+<img src={modheader} style={{marginBottom: '16px', borderRadius: '4px'}}/>
+
+Now when you navigate to Campus Experience with your modheader or proxy enabled, your local copy of Campus Experience
+(JavaScript and stylesheets) will be used. (You should see a 'Local Assets' indicator at the top center of the CX page when using local assets) When you make a change to the JavaScript
+or stylesheets, they will automatically recompile.
+
+## Environment Variables
+
+| Variable       | Example                  |
+| -------------- | ------------------------ |
+| PS_HOSTNAME    | cs92-devo.mhighpoint.com |
+| PS_ENVIRONMENT | csdev92                  |
+| PS_NODE        | SA                       |

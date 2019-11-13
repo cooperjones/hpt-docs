@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.14",
-    "@highpoint/reason-ui-elements": "^0.32.2",
-    "@highpoint/ui-elements": "^10.9.12",
-    "@material-ui/core": "^3.9.2",
+    "@highpoint/reason-ui-elements": "^1.2.0",
+    "@highpoint/ui-elements": "^12.5.0",
+    "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^3.0.2",
+    "@material-ui/pickers": "^3.2.7",
+    "date-fns": "^2.7.0",
     "material-ui-pickers": "^2.2.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -36,13 +38,14 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@storybook/addon-actions": "^5.2.0-alpha.29",
-    "@storybook/addon-docs": "^5.2.0-alpha.29",
-    "@storybook/addon-links": "^5.2.0-alpha.29",
-    "@storybook/addons": "^5.2.0-alpha.29",
-    "@storybook/react": "^5.2.0-alpha.29",
+    "@date-io/date-fns": "^1.3.11",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-docs": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
     "@storybook/storybook-deployer": "^2.8.1",
-    "@storybook/theming": "^5.2.0-alpha.29",
+    "@storybook/theming": "^5.2.6",
     "babel-loader": "^8.0.6"
   }
 }

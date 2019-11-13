@@ -1,8 +1,6 @@
 import React from 'react';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import Theme from '@highpoint/ui-elements/dist/es/Theme';
-import { CssBaseline } from '@material-ui/core';
-import { DocsPage } from '@storybook/addon-docs/blocks';
 import { themes } from '@storybook/theming';
 
 

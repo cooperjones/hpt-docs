@@ -12,12 +12,23 @@
       };
 </script>
 <style>
-html, body, #root {
-    height: 100%;
-    background-color: #f5f6fa;
-}
+  html {
+    font-size: 16px !important
+  }
 
-#docs-root > div:first-child {
-  background-color: #f5f6fa;
-}
+  html, body, #root {
+      height: 100%;
+      background-color: #f5f6fa;
+  }
+
+  @media print {
+    #root, #docs-root {
+      display: none !important;
+    }
+
+  }
+  
+  #docs-root > div:first-child {
+    background-color: #f5f6fa;
+  }
 </style>

@@ -1,0 +1,42 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title='Standardization|Styles' />
+
+# Styles (CSS)
+
+Custom style usage should be kept as minimal as possible for consistency's sake. Generally, components from Material-Ui and the other Highpoint component packages will provide props for different style variants, so custom styles will generally only be needed for fixing spacing and other small modifications. The Highpoint CX apps use several methods for styling elements and components. 
+
+
+## Bootstrap Classes [Docs](https://getbootstrap.com/docs/4.3/layout/utilities-for-layout/)
+
+Bootstrap utility classes can be used for a number of different styles. The most commonly used classes in CX are [padding/margins](https://getbootstrap.com/docs/4.3/utilities/spacing/), [display](https://getbootstrap.com/docs/4.3/utilities/display/), and [flexbox styles](https://getbootstrap.com/docs/4.3/utilities/flex/). See the Bootstrap documentation for details on how these classes can be used.
+
+<Source code={`
+<div className="pr-2 pr-lg-3 d-flex" />
+// The 'pr-2' class will give the div a style of 'padding-right: 8px'. The 'pr-lg-3' style will override the 'pr-2' style if the screen size is larger than the 'lg' breakpoint, giving the div a style of 'padding-right: 12px'. The 'd-flex' class will apply a 'display: flex' style to the div.
+`} />
+
+## Emotion CSS [react-emotion](https://www.npmjs.com/package/react-emotion/v/9.2.12)
+
+Highpoint apps use the react-emotion library to generate custom css class names from normal css markup. See the emotion documentation for advanced usage.* The most common usage:
+
+<Source code={`
+import { css } from 'react-emotion';
+const myClass = css\`border-radius: 4px;\`;
+<div className={myClass} />
+`} />
+
+*Note: The react-emotion library currently use Emotion 9.0, so make sure to reference the [legacy 9.0 version of the documentation](https://5bb1495273f2cf57a2cf39cc--emotion.netlify.com/docs/introduction)
+
+## bs-css [Docs](https://github.com/SentiaAnalytics/bs-css)
+
+In Reason, we use the bs-css library to generate css class names. bs-css is just a statically typed interface to the Emotion library. See the bs-css documentation for details. The most common usage:
+
+<Source code={`
+let myClass = Css.style([Css.borderRadius(\`px(4))]);
+<div className={myClass} />
+`} />
+
+## SASS
+
+Most projects are also equiped with a SASS loader for including some static classes and other custom styles. It is **NOT** recommended to use SASS classes to style components or elements. If a custom style needs to be applied to an element or component, the required CSS should be generated and applied through JS (most likely through Emotion). This way, custom styles will always be located in the same file in which the component/element is used.

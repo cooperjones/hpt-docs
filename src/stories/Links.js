@@ -7,7 +7,7 @@ const Title = ({text}) => <Typography variant='h2' align='center' style={{paddin
 const Heading = ({text}) => <Grid container wrap='nowrap' alignItems='center' style={{paddingTop: '16px', paddingBottom: '8px'}}><Typography variant='h4'>{text}</Typography><Grid item style={{flex: '1', marginLeft: '8px'}}><Divider /></Grid></Grid>;
 
 const LinkItem = ({title, link}) => 
-<Grid container spacing={8}>
+<Grid container spacing={1}>
     <Grid item>
         <Typography variant='body1'>
             {title}
