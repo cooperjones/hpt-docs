@@ -1,0 +1,34 @@
+{
+    "name": "hpt_docs",
+    "namespace": true,
+    "sources": [
+      {
+        "dir": "reason-ui-elements/src",
+        "subdirs": ["bindings", "types", "internal"]
+      }
+    ],
+    "package-specs": {
+      "module": "es6",
+      "in-source": true
+    },
+    "suffix": ".bs.js",
+    "bs-dependencies": [
+      "reason-react",
+      "@jsiebern/bs-material-ui",
+      "@highpoint/bs-ui-elements",
+      "@highpoint/bs-js-fetch",
+      "bs-css",
+      "bs-moment",
+      "bs-epitath",
+      "re-containers"
+    ],
+    "warnings": {
+      "error": true
+    },
+    "refmt": 3,
+    "reason": {
+      "react-jsx": 2
+    },
+    "ppx-flags": ["let-anything/lib/bs/native/let_anything.native"]
+  }
+  

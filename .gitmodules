@@ -1,0 +1,6 @@
+[submodule "ui-elements-docs"]
+	path = ui-elements
+	url = git@bitbucket.org:hp_mobile/ui-elements.git
+[submodule "reason-ui-elements"]
+	path = reason-ui-elements
+	url = git@bitbucket.org:hp_mobile/reason-ui-elements.git

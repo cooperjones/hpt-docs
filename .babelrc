@@ -1,0 +1,32 @@
+{
+  "env": {
+    "cjs": {
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    },
+    "test": {
+      "presets": ["@babel/preset-env"]
+    }
+  },
+  "plugins": [
+    [
+      "emotion",
+      {
+        "autoLabel": true
+      }
+    ],
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-react-jsx",
+    "inline-react-svg"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "not dead", "not ie < 11"]
+        },
+        "modules": false
+      }
+    ]
+  ]
+}
