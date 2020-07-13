@@ -23,7 +23,6 @@ The makeStyles hook also allows access to the Material-UI theme which contains c
 
 <Source code={`
 import { makeStyles } from '@material-ui/styles';
-
 const useStyles = makeStyles(theme => {
   divStyle: {
     width: '100%',
@@ -31,11 +30,10 @@ const useStyles = makeStyles(theme => {
     color: theme.palette.text.primary
   },
 });
-
 const MyComponent = () => {
   const classes = useStyles();
   return(<div className={classes.divStyle}>)
-}
+};
 `} />
 
 
